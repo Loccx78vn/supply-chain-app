@@ -95,9 +95,3 @@ rsconnect::deployApp("path/to/your/app")
 This will upload and deploy your app to shinyapps.io, making it accessible online.
 
 ---
-
-#### 3. Product Chain Tab
-
-The **Product Chain** tab will focus on product-specific data, including supply chain metrics, inventory levels, and product movement over time.
-
-With this setup, your dashboard will have three distinct tabs — **Overview**, **Sales Analyst**, and **Product Chain** — each providing interactive and dynamic content. By combining `{rhino}` for the UI, the **box** package for modularization, and deploying to **shinyapps.io**, you'll have a fully functional application.
