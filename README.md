@@ -96,18 +96,6 @@ This will upload and deploy your app to shinyapps.io, making it accessible onlin
 
 ---
 
-### Main Content: Dashboard with 3 Tabs
-
-The dashboard will consist of three key sections or tabs: **Overview**, **Sales Analyst**, and **Product Chain**. Each of these tabs will be designed to offer a specific view or set of information, and the `{rhino}` framework will handle the layout and interactivity for them.
-
-#### 1. Overview Tab
-
-The **Overview** tab will serve as a high-level summary of key metrics, such as total sales, current inventory, and overall performance. This tab will provide quick insights into the most important data points.
-
-#### 2. Sales Analyst Tab
-
-The **Sales Analyst** tab will provide detailed analysis of sales trends, such as sales by region, product category, or time period. You can integrate interactive charts and graphs here.
-
 #### 3. Product Chain Tab
 
 The **Product Chain** tab will focus on product-specific data, including supply chain metrics, inventory levels, and product movement over time.
