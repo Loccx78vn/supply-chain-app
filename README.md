@@ -97,43 +97,9 @@ Once the app's basic functionality is built, the next step is to focus on custom
 
 **JavaScript** can be used for advanced interactivity, such as animations, responsive features, and integrating external libraries.
 
----
+#### **1. Connect the custom UI with server**
 
-##### **Step 1: Create the HTML Template File**
-
-Create an external HTML file (let's call it `index.html`) that will define the layout and structure of your dashboard. You can include HTML tags, placeholders for Shiny output, and reference external CSS and JavaScript files.
-
-In this HTML template:
-- We reference an external CSS file (`styles.css`) for styling the app.
-- We include an external JavaScript file (`scripts.js`) for any interactive functionality (such as updating the value when the slider moves).
-- The placeholders like `<span id="sliderValue">50</span>` will be dynamically updated with Shiny’s reactive inputs and outputs.
-
----
-
-##### **Step 2: Create the CSS File**
-
-Now create the external CSS file (`styles.css`) that will style the HTML elements in the template.
-
-This CSS file will add some basic styling:
-- The layout is divided into a sidebar and a main content area.
-- A light background and some shadow effects to make the UI more modern and clean.
-- Slider width and label styles are adjusted for clarity.
-
----
-
-##### **Step 3: Create the JavaScript File**
-
-Now, let’s create a JavaScript file (`scripts.js`) for adding interactivity. This script will update the displayed value dynamically when the slider changes.
-
-This JavaScript code:
-- Listens for changes to the slider input and updates the displayed value accordingly.
-- Uses `Shiny.setInputValue()` to send the updated slider value to the Shiny server, making it reactive.
-
----
-
-#### **Step 4: Load the Template in Shiny**
-
-Now that we have our HTML, CSS, and JavaScript files, we can integrate the `htmlTemplate()` function in the R code to load the template.
+After we have our HTML, CSS, and JavaScript files, we can integrate the `htmlTemplate()` function in the R code to load the template.
 
 Here’s how you can modify your Shiny server code to use the HTML template:
 
@@ -162,7 +128,7 @@ shinyApp(ui = ui, server = server)
 
 In this example, we customize the layout, style the page, and use classes for more advanced CSS styling.
 
-#### **3. Deploying the App on ShinyApps.io**
+#### **2. Deploying the App on ShinyApps.io**
 
 The final step is to deploy the app on **ShinyApps.io**, which is a cloud platform provided by the Posit community (formerly RStudio). This platform allows us to host the app online so it can be accessed by users anywhere. Deploying the app is straightforward:
 
