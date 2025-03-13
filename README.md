@@ -284,3 +284,5 @@ Once the app is deployed, it will be available for users to interact with, offer
 
 This project is an exciting opportunity to create a flexible and customizable dashboard app that can address many of the limitations of traditional BIS tools. By using R, Rhino, and Shiny, the app will not only be cost-effective but also highly interactive, providing businesses with the tools they need to drive data-driven decisions. The combination of a powerful back-end framework and a customizable front-end UI ensures that this app will meet the diverse needs of businesses, ultimately helping them uncover insights faster and more efficiently.
 
+![](background.jpg)
+
