@@ -103,41 +103,6 @@ Once the app's basic functionality is built, the next step is to focus on custom
 
 Create an external HTML file (let's call it `index.html`) that will define the layout and structure of your dashboard. You can include HTML tags, placeholders for Shiny output, and reference external CSS and JavaScript files.
 
-Here’s an example of what the `index.html` file might look like:
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Business Dashboard</title>
-  
-  <!-- Link to external CSS -->
-  <link rel="stylesheet" href="styles.css">
-  
-  <!-- Include JavaScript for advanced interactions -->
-  <script src="scripts.js"></script>
-</head>
-<body>
-  <div class="container">
-    <h1>Business Insights Dashboard</h1>
-    
-    <div class="sidebar">
-      <label for="slider">Select a Value:</label>
-      <input type="range" id="slider" min="1" max="100" value="50" class="slider" />
-      <span id="sliderValue">50</span>
-    </div>
-    
-    <div class="main-content">
-      <p id="result">The selected value is: <span id="valueDisplay">50</span></p>
-      <div id="plotContainer"></div>
-    </div>
-  </div>
-</body>
-</html>
-```
-
 In this HTML template:
 - We reference an external CSS file (`styles.css`) for styling the app.
 - We include an external JavaScript file (`scripts.js`) for any interactive functionality (such as updating the value when the slider moves).
@@ -149,49 +114,6 @@ In this HTML template:
 
 Now create the external CSS file (`styles.css`) that will style the HTML elements in the template.
 
-```css
-/* styles.css */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
-}
-
-.container {
-  display: flex;
-  justify-content: space-between;
-  margin: 20px;
-}
-
-.sidebar {
-  width: 30%;
-  padding: 15px;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.main-content {
-  width: 65%;
-  padding: 15px;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.slider {
-  width: 100%;
-}
-
-#result {
-  font-size: 1.2em;
-  margin-top: 10px;
-}
-
-h1 {
-  color: #007bff;
-}
-```
-
 This CSS file will add some basic styling:
 - The layout is divided into a sidebar and a main content area.
 - A light background and some shadow effects to make the UI more modern and clean.
@@ -202,20 +124,6 @@ This CSS file will add some basic styling:
 ##### **Step 3: Create the JavaScript File**
 
 Now, let’s create a JavaScript file (`scripts.js`) for adding interactivity. This script will update the displayed value dynamically when the slider changes.
-
-```javascript
-// scripts.js
-document.addEventListener("DOMContentLoaded", function() {
-  const slider = document.getElementById("slider");
-  const valueDisplay = document.getElementById("sliderValue");
-  
-  // Event listener for slider input
-  slider.addEventListener("input", function() {
-    valueDisplay.textContent = slider.value;
-    Shiny.setInputValue("slider", slider.value, {priority: "event"});
-  });
-});
-```
 
 This JavaScript code:
 - Listens for changes to the slider input and updates the displayed value accordingly.
