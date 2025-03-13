@@ -1,0 +1,12 @@
+name: supply-chain-app
+title: supply-chain-app
+username: loccx78
+account: loccx78
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 14216199
+bundleId: 9936095
+url: https://loccx78.shinyapps.io/supply-chain-app/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

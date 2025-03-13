@@ -1,0 +1,9 @@
+.Rhistory
+.Rproj.user
+*.Rproj
+*.rsc
+.git
+*.gitignore
+.dockerignore
+.docker
+tests/

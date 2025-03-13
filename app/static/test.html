@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Supply Chain Dashboard">
+    <meta name="keywords" content="supply chain, dashboard, analytics">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <!-- Logo, title and version -->
+        <div class="header-left">
+            <!-- Rhino Logo -->
+            <a href="https://posit.co/download/rstudio-desktop/" target="_blank">
+                <img src="https://raw.githubusercontent.com/Loccx78vn/supply-chain-app/refs/heads/main/icons/rstudio.png" alt="Rstudio Logo" class="logo">
+            </a>
+            <h2 class="dashboard-heading">
+              <span class="dashboard-title">{{ appTitle }}</span>
+              <span class="dashboard-version">{{ appVersion }}</span>
+            </h2>
+        </div>
+        
+         <!-- Center section with Shiny, Rhino logos and "Built by" text -->
+        <div class="header-center">
+            <img src="https://raw.githubusercontent.com/Loccx78vn/supply-chain-app/refs/heads/main/icons/shiny.png" alt="Shiny Logo">
+            <img src="https://raw.githubusercontent.com/Loccx78vn/supply-chain-app/refs/heads/main/icons/rhino.png" alt="Rhino Logo">
+            <span class="built-by">
+                Built by <a href="https://shiny.posit.co/" target="_blank">Shiny</a> and 
+                <a href="https://appsilon.github.io/rhino/" target="_blank">Rhino</a>
+            </span>
+        </div>
+        
+        <!-- Sub personal information -->
+        <div class="header-right">
+            <a href="https://github.com/Loccx78vn" target="_blank" class="header-icon"><i class="fab fa-github"></i></a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=loccaoxuan103@gmail.com" target="_blank" class="header-icon"><i class="fas fa-globe"></i></a>
+            <a href="https://www.facebook.com/cao.loc.9693" target="_blank" class="header-icon"><i class="fab fa-facebook"></i></a>
+        </div>
+    </header>
+    
+    
+    <!-- Sidebar -->
+    <div class="sidebar" id="mySidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-title">Result business</div>
+            <!-- Close sidebar button -->
+            <button class="toggle-btn" onclick="toggleSidebar()"><i class = "fas fa-bars" id="sidebarToggleIcon"></i>
+            </button>
+            </button>
+        </div>
+        
+        <!-- List tabs -->
+        <button class="sidebar-tab" onclick="openTab(event, 'Overview')" id="defaultOpen"><i class="fas fa-chart-pie"></i> Overview</button>
+        <button class="sidebar-tab" onclick="openTab(event, 'SalesAnalyst')"><i class="fas fa-chart-line"></i> Sales Analyst</button>
+        <button class="sidebar-tab" onclick="openTab(event, 'Product')"><i class="fas fa-box"></i> Product</button>
+        
+        <!-- Contact and Copyright Section -->
+        <div class="sidebar-footer">
+            <p class="phone-number"><i class="fas fa-phone-alt"></i> +8491 434 6380</p>
+            <p class="copyright">© 2025 loccx78. All Rights Reserved.</p>
+            <a href="https://www.appsilon.com/" target="_blank" class="website-link">
+    {{ marketplace_website }} </a>
+        </div>
+    </div>
+    
+    <!-- Main content -->
+    <div class="main-content" id="content-area">
+        <button class="open-sidebar-btn" onclick="openSidebar()"> <i class="fas fa-bars"></i></button>
+        <!-- Overview tab -->
+        <div id="Overview" class="tabcontent">
+            <div class="grid-container">
+                <div class="card filter1">
+                    <div class="card-header">Select region</div>
+                    <div class="card-body">{{ selectRegion_ui }}</div>
+                </div>
+                <div class="card map">
+                    <button class="fullscreen-button" onclick="toggleFullscreen()">
+                      <i class="fas fa-expand"></i>
+                    </button>
+                    <div class="chart-header">Map</div> <!-- Added chart-header here -->
+                    <div class="card-body">{{ map_ui }}</div>
+                </div>
+                <div class="card line">
+                    <button class="fullscreen-button" onclick="toggleFullscreen()">
+                      <i class="fas fa-expand"></i>
+                    </button>
+                    <div class="chart-header">Line Chart</div> <!-- Added chart-header here -->
+                    <div class="card-body">{{ line_ui }}</div>
+                </div>
+                <div class="card barchart">
+                    <button class="fullscreen-button" onclick="toggleFullscreen()">
+                      <i class="fas fa-expand"></i>
+                    </button>
+                    <div class="chart-header">Bar Chart</div> <!-- Added chart-header here -->
+                    <div class="card-body">{{ barchart_ui }}</div>
+                </div>
+                <div class="card box1">
+                    <div class="chart-header">Sales Summary</div> <!-- Added chart-header here -->
+                    <div class="value-box">
+                        <div class="value-box-title">{{ salesSummary_ui }}</div>
+                    </div>
+                </div>
+                <div class="card box2">
+                    <div class="chart-header">Production Summary</div> <!-- Added chart-header here -->
+                    <div class="value-box">
+                        <div class="value-box-title">{{ productionSummary_ui }}</div>
+                    </div>
+                </div>
+                <div class="card box3">
+                    <div class="chart-header">Users Summary</div> <!-- Added chart-header here -->
+                    <div class="value-box">
+                        <div class="value-box-title">{{ usersSummary_ui }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Sales analyst tab -->
+        <div id="SalesAnalyst" class="tabcontent">
+            <div class="grid-container">
+                <div class="card filter2">
+                    <div class="card-header">Select region</div>
+                    <div class="card-body">{{ selectRegionName_ui }}</div>
+                </div>
+                <div class="card filter3">
+                    <div class="card-header">Select warehouse</div>
+                    <div class="card-body">{{ selectWarehouseCode_ui }}</div>
+                </div>
+                <div class="card table">
+                  <button class="fullscreen-button" onclick="toggleFullscreen()">
+                      <i class="fas fa-expand"></i>
+                    </button>
+                    <div class="chart-header">Sales Table</div> <!-- Added chart-header here -->
+                    <div class="card-body">{{ table_ui }}</div>
+                </div>
+                <div class="card linechart">
+                  <button class="fullscreen-button" onclick="toggleFullscreen()">
+                      <i class="fas fa-expand"></i>
+                    </button>
+                    <div class="chart-header">Line Chart</div> <!-- Added chart-header here -->
+                    <div class="card-body">{{ linechart_ui }}</div>
+                </div>
+                <div class="card boxplot">
+                  <button class="fullscreen-button" onclick="toggleFullscreen()">
+                      <i class="fas fa-expand"></i>
+                    </button>
+                    <div class="chart-header">Box Plot</div> <!-- Added chart-header here -->
+                    <div class="card-body">{{ boxplot_ui }}</div>
+                </div>
+            </div>
+        </div>
+        <!-- Product tab -->
+        <div id="Product" class="tabcontent">
+            <div class="grid-container">
+                <div class="card filter4">
+                    <div class="card-header">
+                      <span>Select product category</span> <span>{{ info_icon }}</span>
+                    </div>
+                    <div class="card-body">{{ selectProductName_ui }}</div>
+                    <div class="card-body">
+                      {{ selectRegionId_ui }} {{ warning_message }}</div>
+                    <div class="card-body">{{ selectStoreId_ui }}</div>
+                </div>    
+                
+                <div class="card chain_map">
+                  <button class="fullscreen-button" onclick="toggleFullscreen()">
+                      <i class="fas fa-expand"></i>
+                    </button>
+                    <div class="chart-header">Chain Map</div> 
+                    <div class="card-body">{{ chain_map_ui }}</div>
+                </div>
+                <div class="card tab">
+                    <div class="tabset">
+                        <button class="tablink" onclick="openInnerTab(event, 'General')">General</button>
+                        <button class="tablink" onclick="openInnerTab(event, 'Details')">Details</button>
+                    </div>
+                    <div id="General" class="innertabcontent">
+                      <button class="fullscreen-button" onclick="toggleFullscreen()">
+                      <i class="fas fa-expand"></i>
+                    </button>
+                        <div class="chart-header">Sankey Diagram</div> 
+                        {{ sankey_ui }}
+                    </div>
+                    <div id="Details" class="innertabcontent">
+                      <button class="fullscreen-button" onclick="toggleFullscreen()">
+                      <i class="fas fa-expand"></i>
+                    </button>
+                        <div class="chart-header">Waterfall Chart</div> 
+                        {{ waterfall_ui }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
