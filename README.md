@@ -97,7 +97,7 @@ Once the app's basic functionality is built, the next step is to focus on custom
 
 **JavaScript** can be used for advanced interactivity, such as animations, responsive features, and integrating external libraries.
 
-#### **1. Connect the custom UI with server**
+##### **1. Connect the custom UI with server**
 
 After we have our HTML, CSS, and JavaScript files, we can integrate the `htmlTemplate()` function in the R code to load the template.
 
@@ -128,7 +128,7 @@ shinyApp(ui = ui, server = server)
 
 In this example, we customize the layout, style the page, and use classes for more advanced CSS styling.
 
-#### **2. Deploying the App on ShinyApps.io**
+##### **2. Deploying the App on ShinyApps.io**
 
 The final step is to deploy the app on **ShinyApps.io**, which is a cloud platform provided by the Posit community (formerly RStudio). This platform allows us to host the app online so it can be accessed by users anywhere. Deploying the app is straightforward:
 
