@@ -97,13 +97,9 @@ Once the app's basic functionality is built, the next step is to focus on custom
 
 **JavaScript** can be used for advanced interactivity, such as animations, responsive features, and integrating external libraries.
 
-### **2. Customizing the App’s UI with `htmlTemplate()`, HTML, CSS, and JavaScript**
-
-Using the `htmlTemplate()` function in Shiny, we can load an external HTML file into the UI, allowing for a more modular approach to UI design. This way, the HTML, CSS, and JavaScript code can be structured separately, making the code easier to maintain.
-
 ---
 
-#### **Step 1: Create the HTML Template File**
+##### **Step 1: Create the HTML Template File**
 
 Create an external HTML file (let's call it `index.html`) that will define the layout and structure of your dashboard. You can include HTML tags, placeholders for Shiny output, and reference external CSS and JavaScript files.
 
@@ -149,7 +145,7 @@ In this HTML template:
 
 ---
 
-#### **Step 2: Create the CSS File**
+##### **Step 2: Create the CSS File**
 
 Now create the external CSS file (`styles.css`) that will style the HTML elements in the template.
 
@@ -203,7 +199,7 @@ This CSS file will add some basic styling:
 
 ---
 
-#### **Step 3: Create the JavaScript File**
+##### **Step 3: Create the JavaScript File**
 
 Now, let’s create a JavaScript file (`scripts.js`) for adding interactivity. This script will update the displayed value dynamically when the slider changes.
 
